@@ -12,8 +12,18 @@ spec:
     app: haproxy
     tier: backend
   ports:
+  - name: stats
+    protocol: TCP
+    port: 7000
+    targetPort: 7000
+    nodePort: 30001
+  - name: pgs
+    protocol: TCP
+    port: 5000
+    targetPort: 5000
+    nodePort: 30002
   - name: http
     protocol: TCP
     port: 80
-    targetPort: 7000
-    nodePort: 30001
+    targetPort: 80
+    nodePort: 30003

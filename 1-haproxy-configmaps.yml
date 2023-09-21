@@ -22,7 +22,7 @@ data:
 
     listen stats
         mode http
-        bind *:7000
+        bind *:80
         stats enable
         stats uri /
 
