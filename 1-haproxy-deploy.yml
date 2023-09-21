@@ -33,13 +33,13 @@ spec:
               protocol: TCP 
               containerPort: 80
         volumeMounts:
-            - mountPath: /var/log/haproxy.log
+            - mountPath: /var/log/
               name: harpoxy-log
             - mountPath: "/usr/local/etc/haproxy/"
               name: haproxy-cfg
               readOnly: true
         command: ["sh"]
-        args: ["-c", "haproxy -f /usr/local/etc/haproxy/haproxy.cfg"]
+        args: ["-c", "haproxy -f /usr/local/etc/haproxy/haproxy.cfg", "tail -F /var/log/haproxy.log"]
       volumes:
           - name: harpoxy-log
             persistentVolumeClaim:
