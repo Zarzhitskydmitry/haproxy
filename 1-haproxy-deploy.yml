@@ -39,7 +39,7 @@ spec:
               name: haproxy-cfg
               readOnly: true
         command: ["sh"]
-        args: ["-c haproxy -f /usr/local/etc/haproxy/haproxy.cfg && tail -F /var/log/haproxy.log"]
+        args: ["-c", "haproxy -f /usr/local/etc/haproxy/haproxy.cfg && tail -F /var/log/haproxy.log"]
       volumes:
           - name: harpoxy-log
             persistentVolumeClaim:
