@@ -37,6 +37,7 @@ spec:
               name: harpoxy-log
             - mountPath: "/usr/local/etc/haproxy/"
               name: haproxy-cfg
+              readOnly: true
         command: ["/bin/bash"]
         args: ["-c", "haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg"]
       volumes:
