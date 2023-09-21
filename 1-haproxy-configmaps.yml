@@ -33,3 +33,4 @@ data:
         server pgsql-01 10.0.4.71:5432 maxconn 100 check port 8008
         server pgsql-02 10.0.4.72:5432 maxconn 100 check port 8008
         server pgsql-03 10.0.4.73:5432 maxconn 100 check port 8008
+  #haproxy.cfg: |
