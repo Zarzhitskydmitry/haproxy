@@ -29,9 +29,12 @@ spec:
             memory: "256Mi"
             cpu: "200m"
         ports:
-            - name: http
+            - name: haproxy
               protocol: TCP 
-              containerPort: 80
+              containerPort: 7000
+            - name: pgs
+              protocol: TCP 
+              containerPort: 5000
         volumeMounts:
             - mountPath: /var/log/
               name: harpoxy-log
@@ -39,7 +42,7 @@ spec:
               name: haproxy-cfg
               readOnly: true
         command: ["sh"]
-        args: ["-c", "haproxy -f /usr/local/etc/haproxy/haproxy.cfg && tail -F /var/log/haproxy.log"]
+        args: ["-c", "tail -F /var/log/haproxy.log"]
       volumes:
           - name: harpoxy-log
             persistentVolumeClaim:
