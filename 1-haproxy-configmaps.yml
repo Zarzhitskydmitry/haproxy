@@ -9,11 +9,7 @@ data:
   haproxy.cfg: |
     global
         log 127.0.0.1 local0
-        chroot /var/lib/haproxy
         maxconn 100
-        user haproxy
-        group haproxy
-        daemon
 
     defaults
         log global
