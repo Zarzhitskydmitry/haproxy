@@ -37,7 +37,7 @@ spec:
               name: harpoxy-log
             - mountPath: "/usr/local/etc/haproxy/"
               name: haproxy-cfg
-        env:
+        args:
         - -- haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
       volumes:
           - name: harpoxy-log
