@@ -19,8 +19,7 @@ spec:
     spec:
       containers:
       - name: haproxy
-        image: haproxy:bullseye
-        # zarzhitskydmitry/haproxy:alpine-2.8
+        image: zarzhitskydmitry/haproxy:bullseye
         imagePullPolicy: IfNotPresent
         resources:
           requests:
